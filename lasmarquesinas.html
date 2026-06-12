@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Marquesinas (marquee)</title>
+  <style>
+    :root{
+      --bg:#030712;
+      --card: rgba(255,255,255,.07);
+      --text:#e5e7eb;
+      --muted:#9ca3af;
+      --line: rgba(255,255,255,.12);
+      --hot:#fb7185;
+      --cool:#60a5fa;
+      --shadow: 0 22px 70px rgba(0,0,0,.55);
+    }
+    *{box-sizing:border-box;}
+    body{
+      margin:0;
+      min-height:100vh;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(900px 420px at 15% 0%, rgba(96,165,250,.25), transparent 55%),
+        radial-gradient(820px 360px at 85% 20%, rgba(251,113,133,.22), transparent 58%),
+        linear-gradient(180deg, #020617, var(--bg));
+      display:flex;
+      justify-content:center;
+      padding:36px 16px;
+    }
+
+    .wrap{width:min(980px,100%);}
+
+    header{
+      margin-bottom:16px;
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      gap:12px;
+    }
+
+    h1{margin:0; font-size:clamp(1.8rem,2.7vw,2.4rem);}
+    .sub{margin:8px 0 0; color:var(--muted); line-height:1.7;}
+
+    .card{
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      padding:18px;
+    }
+
+    .stack{display:flex; flex-direction:column; gap:14px;}
+
+    .marq{
+      background: rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.10);
+      border-radius:16px;
+      padding:12px 14px;
+      overflow:hidden;
+    }
+
+    .marq strong{color:#fff;}
+
+    marquee{
+      width:100%;
+      padding:4px 0;
+      color:var(--text);
+    }
+
+    .row{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+
+    .imgchip{
+      display:flex;
+      flex-direction:column;
+      gap:6px;
+      align-items:center;
+      min-width:120px;
+    }
+
+    .imgchip img{
+      width:92px;
+      height:92px;
+      border-radius:16px;
+      object-fit:cover;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.04);
+    }
+
+    .imgchip span{color:var(--muted); font-weight:800; font-size:.9rem; text-align:center;}
+
+    .links marquee a{
+      color: #fff;
+      text-decoration: none;
+      font-weight:900;
+    }
+
+    .links marquee a:hover{color: var(--cool); text-decoration: underline;}
+
+    .video iframe{
+      width:100%;
+      aspect-ratio: 16 / 9;
+      border:0;
+      border-radius:16px;
+      background:#000;
+    }
+
+    .note{
+      color:var(--muted);
+      line-height:1.7;
+      font-size:.95rem;
+      margin-top:8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div>
+        <h1>Ejemplos de marquesinas</h1>
+        <p class="sub">Uso de <code><marquee></code> (HTML antiguo) con estilos modernos para que se vea diferente.</p>
+      </div>
+      <div class="badge" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:999px;padding:10px 14px;color:var(--muted);font-weight:900;">📣 Demo</div>
+    </header>
+
+    <section class="card">
+      <div class="stack">
+        <div class="marq">
+          <h2 style="margin:0 0 8px; font-size:1.1rem;">Horizontal: izquierda → derecha</h2>
+          <marquee scrollamount="7" behavior="scroll">marquesina de izquierda a derecha con estilo</marquee>
+        </div>
+
+        <div class="marq">
+          <h2 style="margin:0 0 8px; font-size:1.1rem;">Horizontal: derecha → izquierda</h2>
+          <marquee direction="right" scrollamount="7" behavior="scroll">marquesina de derecha a izquierda con estilo</marquee>
+        </div>
+
+        <div class="marq">
+          <h2 style="margin:0 0 8px; font-size:1.1rem;">Vertical: arriba</h2>
+          <marquee direction="up" scrollamount="3" behavior="scroll" style="line-height:1.6;">
+            noticia 1<br />
+            noticia 2<br />
+            noticia 3<br />
+            arriba las chivas
+          </marquee>
+        </div>
+
+        <div class="marq">
+          <h2 style="margin:0 0 8px; font-size:1.1rem;">Con rebote (alternate)</h2>
+          <marquee behavior="alternate" scrollamount="10">mensajito con rebote</marquee>
+        </div>
+
+        <div class="marq">
+          <h2 style="margin:0 0 8px; font-size:1.1rem;">Marquesina con imágenes</h2>
+          <marquee behavior="alternate" scrollamount="6">
+            <div class="row">
+              <div class="imgchip">
+                <img src="homero.png" alt="Homero" />
+                <span>Homero</span>
+              </div>
+              <div class="imgchip">
+                <img src="Fernanfloo_y_Super_Sonico.webp" alt="Fernet" />
+                <span>Fernanfloo</span>
+              </div>
+              <div class="imgchip">
+                <img src="blue-glossy-ball-png.webp" alt="Blue ball" />
+                <span>Blue</span>
+              </div>
+            </div>
+          </marquee>
+        </div>
+
+        <div class="marq links">
+          <h2 style="margin:0 0 8px; font-size:1.1rem;">Con enlaces</h2>
+          <marquee scrollamount="6" behavior="scroll">
+            <a href="https://www.youtube.com/channel/UCX6OQ3DkcsbYNE6H8uQQuVA" target="_blank" rel="noreferrer">Mr.Beast</a>
+            &nbsp;•&nbsp;
+            <a href="https://callofduty.fandom.com/es/wiki/Call_of_Duty_Wiki" target="_blank" rel="noreferrer">Call of Duty Wiki</a>
+            &nbsp;•&nbsp;
+            <a href="https://godofwar.fandom.com/es/wiki/God_of_War_Wiki" target="_blank" rel="noreferrer">God of War Wiki</a>
+          </marquee>
+        </div>
+
+        <div class="marq video">
+          <h2 style="margin:0 0 8px; font-size:1.1rem;">Video musical</h2>
+          <iframe
+            src="https://www.youtube.com/embed/jNQXAC9IVRw"
+            title="Video de ejemplo"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+          <div class="note">Si el video no carga al abrir el archivo local, usa Live Server.</div>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
+

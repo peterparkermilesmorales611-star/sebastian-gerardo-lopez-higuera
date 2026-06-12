@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calendario rústico - Mayo 2026</title>
+  <style>
+    :root{
+      --bg: #0b1220;
+      --card: rgba(255,255,255,.06);
+      --text:#e5e7eb;
+      --muted:#a7b0c0;
+      --gold:#f4b740;
+      --violet:#7c3aed;
+      --ink:#0f172a;
+      --shadow: 0 22px 70px rgba(0,0,0,.55);
+    }
+
+    *{box-sizing:border-box;}
+
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      min-height:100vh;
+      color:var(--text);
+      background:
+        radial-gradient(900px 480px at 15% 0%, rgba(124,58,237,.35), transparent 60%),
+        radial-gradient(760px 420px at 95% 20%, rgba(244,183,64,.26), transparent 55%),
+        linear-gradient(180deg, #070b15, var(--bg));
+      display:flex;
+      justify-content:center;
+      padding:36px 16px;
+    }
+
+    .wrap{width:min(780px, 100%);}
+
+    .top{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:14px;
+      margin-bottom:14px;
+      flex-wrap:wrap;
+    }
+
+    .title{
+      margin:0;
+      font-size:clamp(1.7rem, 2.6vw, 2.1rem);
+    }
+
+    .subtitle{
+      margin:8px 0 0;
+      color:var(--muted);
+      line-height:1.5;
+      max-width:52ch;
+    }
+
+    .chip{
+      padding:10px 14px;
+      background:rgba(244,183,64,.14);
+      border:1px solid rgba(244,183,64,.35);
+      color:#ffe4a7;
+      border-radius:999px;
+      font-weight:700;
+      letter-spacing:.02em;
+      height:fit-content;
+    }
+
+    .card{
+      background:var(--card);
+      border:1px solid rgba(255,255,255,.10);
+      border-radius:20px;
+      box-shadow:var(--shadow);
+      padding:18px;
+    }
+
+    table{width:100%; border-collapse:collapse;}
+
+    .month{
+      background: linear-gradient(90deg, rgba(244,183,64,.95), rgba(124,58,237,.92));
+      color:#0b1220;
+      font-weight:900;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+      text-align:center;
+      padding:14px 8px;
+      border-radius:16px;
+    }
+
+    th, td{padding:10px 4px; text-align:center; border-bottom:1px solid rgba(255,255,255,.06);}
+    th{color:var(--muted); font-weight:700; font-size:.9rem;}
+
+    td{font-size:1rem;}
+
+    .blank{background:transparent;}
+
+    .weekday-hot{background:rgba(244,183,64,.14); color:#fff; font-weight:800;}
+    .weekday-violet{background:rgba(124,58,237,.18); color:#fff; font-weight:800;}
+    .highlight{background:rgba(244,183,64,.95); color:#0b1220; font-weight:900; border:2px solid rgba(124,58,237,.65);}
+
+    .legend{
+      margin-top:14px;
+      padding:14px;
+      border-radius:16px;
+      background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.08);
+      color:var(--muted);
+      line-height:1.7;
+    }
+
+    .legend strong{color:var(--text);}
+
+    .final-note{
+      margin-top:14px;
+      color:var(--muted);
+      text-align:center;
+      font-size:.98rem;
+      line-height:1.55;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="top">
+      <div>
+        <h1 class="title">Calendario del mes (Mayo 2026)</h1>
+        <p class="subtitle">Una tabla con estilos diferentes para que se distingan los días marcados.</p>
+      </div>
+      <div class="chip">🎨 Estilo “rústico” moderno</div>
+    </div>
+
+    <section class="card">
+      <table>
+        <thead>
+          <tr>
+            <th colspan="7" class="month">Mayo 2026</th>
+          </tr>
+          <tr>
+            <th>Dom</th>
+            <th>Lun</th>
+            <th>Mar</th>
+            <th>Mié</th>
+            <th>Jue</th>
+            <th>Vie</th>
+            <th>Sáb</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="blank"></td>
+            <td class="blank"></td>
+            <td class="blank"></td>
+            <td class="blank"></td>
+            <td class="blank"></td>
+            <td class="highlight">1</td>
+            <td>2</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td class="weekday-hot">4</td>
+            <td class="highlight">5</td>
+            <td>6</td>
+            <td>7</td>
+            <td class="weekday-violet">8</td>
+            <td>9</td>
+          </tr>
+          <tr>
+            <td>10</td>
+            <td class="weekday-hot">11</td>
+            <td>12</td>
+            <td>13</td>
+            <td>14</td>
+            <td class="highlight">15</td>
+            <td>16</td>
+          </tr>
+          <tr>
+            <td>17</td>
+            <td class="weekday-hot">18</td>
+            <td class="highlight">19</td>
+            <td>20</td>
+            <td>21</td>
+            <td class="weekday-violet">22</td>
+            <td>23</td>
+          </tr>
+          <tr>
+            <td>24</td>
+            <td class="weekday-hot">25</td>
+            <td class="highlight">26</td>
+            <td>27</td>
+            <td>28</td>
+            <td class="weekday-violet">29</td>
+            <td>30</td>
+          </tr>
+          <tr>
+            <td>31</td>
+            <td class="blank"></td>
+            <td class="blank"></td>
+            <td class="blank"></td>
+            <td class="blank"></td>
+            <td class="blank"></td>
+            <td class="blank"></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="legend">
+        <div><strong>1 de mayo:</strong> Día del trabajo</div>
+        <div><strong>5 de mayo:</strong> Batalla de Puebla</div>
+        <div><strong>15 de mayo:</strong> Día del maestro</div>
+      </div>
+    </section>
+
+    <p class="final-note">En algunos puntos tuve que consultar referencias para lograr el diseño y que quedara bien presentado.</p>
+  </div>
+</body>
+</html>
+

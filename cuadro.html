@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cuadro comparativo: HTML vs CSS</title>
+  <style>
+    :root{
+      --bg:#0b1220;
+      --card: rgba(255,255,255,.06);
+      --text:#e5e7eb;
+      --muted:#aab4c5;
+      --line: rgba(255,255,255,.12);
+      --html:#60a5fa;
+      --css:#fb7185;
+      --shadow: 0 24px 80px rgba(0,0,0,.55);
+    }
+    *{box-sizing:border-box;}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background:
+        radial-gradient(900px 420px at 10% 0%, rgba(96,165,250,.30), transparent 60%),
+        radial-gradient(780px 400px at 90% 25%, rgba(251,113,133,.25), transparent 55%),
+        linear-gradient(180deg, #070b15, var(--bg));
+      color:var(--text);
+      min-height:100vh;
+      padding:38px 16px;
+      display:flex;
+      justify-content:center;
+    }
+
+    .wrap{width:min(980px, 100%);}
+
+    .hero{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-bottom:16px;
+    }
+
+    h1{margin:0; font-size:clamp(1.7rem, 2.8vw, 2.5rem); letter-spacing:-.02em;}
+    .tag{
+      padding:10px 14px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.06);
+      color:var(--muted);
+      font-weight:700;
+    }
+
+    .card{
+      background: var(--card);
+      border:1px solid rgba(255,255,255,.10);
+      border-radius:18px;
+      box-shadow: var(--shadow);
+      padding:18px;
+      overflow:auto;
+    }
+
+    table{width:100%; border-collapse:separate; border-spacing:0; min-width:720px;}
+
+    th, td{
+      padding:12px 12px;
+      border-bottom:1px solid rgba(255,255,255,.08);
+      vertical-align:top;
+    }
+
+    th{
+      text-align:left;
+      color:var(--text);
+      font-weight:900;
+      background: rgba(255,255,255,.06);
+      position:sticky;
+      top:0;
+      backdrop-filter: blur(8px);
+    }
+
+    tr:last-child td{border-bottom:none;}
+
+    .col-aspect{width:26%;}
+
+    .pill-html{
+      display:inline-block;
+      padding:6px 10px;
+      border-radius:999px;
+      background: rgba(96,165,250,.16);
+      border:1px solid rgba(96,165,250,.35);
+      color:#bfdbfe;
+      font-weight:900;
+    }
+
+    .pill-css{
+      display:inline-block;
+      padding:6px 10px;
+      border-radius:999px;
+      background: rgba(251,113,133,.16);
+      border:1px solid rgba(251,113,133,.35);
+      color:#fecdd3;
+      font-weight:900;
+    }
+
+    .cell-muted{color:var(--muted); line-height:1.55;}
+
+    caption{
+      caption-side:top;
+      text-align:left;
+      margin-bottom:12px;
+      color:var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="hero">
+      <h1>Cuadro comparativo: HTML vs CSS</h1>
+      <div class="tag">📌 Estructura vs Estilo</div>
+    </div>
+
+    <section class="card">
+      <table aria-label="Cuadro comparativo">
+        <thead>
+          <tr>
+            <th class="col-aspect">Aspecto</th>
+            <th><span class="pill-html">HTML</span></th>
+            <th><span class="pill-css">CSS</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Definición</strong></td>
+            <td class="cell-muted">Lenguaje de marcado que crea la estructura de una página web.</td>
+            <td class="cell-muted">Lenguaje de estilos que define cómo se ve la página.</td>
+          </tr>
+          <tr>
+            <td><strong>Función principal</strong></td>
+            <td class="cell-muted">Organiza contenido y componentes (títulos, párrafos, imágenes, etc.).</td>
+            <td class="cell-muted">Da forma visual: colores, tamaños, márgenes, alineaciones y más.</td>
+          </tr>
+          <tr>
+            <td><strong>Extensión típica</strong></td>
+            <td class="cell-muted">.html</td>
+            <td class="cell-muted">.css</td>
+          </tr>
+          <tr>
+            <td><strong>Elementos comunes</strong></td>
+            <td class="cell-muted">Etiquetas como <code><h1></code>, <code><p></code>, <code><div></code>, <code><img></code>.</td>
+            <td class="cell-muted">Propiedades como <code>color</code>, <code>font-size</code>, <code>margin</code>, <code>padding</code>.</td>
+          </tr>
+          <tr>
+            <td><strong>Importancia</strong></td>
+            <td class="cell-muted">Es esencial para la estructura y el contenido.</td>
+            <td class="cell-muted">Mejora la presentación visual y la experiencia de usuario.</td>
+          </tr>
+          <tr>
+            <td><strong>Tipo de lenguaje</strong></td>
+            <td class="cell-muted">Lenguaje de marcado.</td>
+            <td class="cell-muted">Lenguaje de hojas de estilo.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </div>
+</body>
+</html>
+

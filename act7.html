@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Actividad 7 - Multimedia</title>
+  <style>
+    :root{
+      --bg1:#0b1020;
+      --bg2:#111827;
+      --card:rgba(255,255,255,.08);
+      --card2:rgba(255,255,255,.12);
+      --text:#e5e7eb;
+      --muted:#9ca3af;
+      --accent:#22c55e;
+      --accent2:#60a5fa;
+      --shadow: 0 18px 50px rgba(0,0,0,.45);
+    }
+
+    *{box-sizing:border-box;}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+      min-height:100vh;
+      background:
+        radial-gradient(900px 420px at 10% 10%, rgba(96,165,250,.35), transparent 55%),
+        radial-gradient(800px 380px at 90% 20%, rgba(34,197,94,.25), transparent 55%),
+        linear-gradient(135deg, var(--bg1), var(--bg2));
+      display:flex;
+      justify-content:center;
+      padding:32px 16px;
+    }
+
+    .wrap{width:min(1000px, 100%);}
+
+    header{
+      text-align:center;
+      margin-bottom:18px;
+    }
+
+    .badge{
+      display:inline-block;
+      padding:8px 14px;
+      border-radius:999px;
+      background:rgba(34,197,94,.16);
+      border:1px solid rgba(34,197,94,.35);
+      color:#bff7d1;
+      font-weight:700;
+      letter-spacing:.02em;
+      font-size:.9rem;
+      margin-bottom:14px;
+    }
+
+    h1{
+      margin:0;
+      font-size:clamp(1.8rem, 3.2vw, 2.4rem);
+      line-height:1.1;
+    }
+
+    p{margin:10px 0 0; color:var(--muted);}
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:16px;
+      margin-top:18px;
+    }
+
+    @media (min-width: 860px){
+      .grid{grid-template-columns: 1.05fr .95fr;}
+    }
+
+    .card{
+      background:var(--card);
+      border:1px solid rgba(255,255,255,.10);
+      border-radius:18px;
+      box-shadow: var(--shadow);
+      padding:16px;
+    }
+
+    .card h2{
+      margin:0 0 10px;
+      font-size:1.1rem;
+    }
+
+    .media{
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+    }
+
+    iframe{
+      width:100%;
+      aspect-ratio: 16/9;
+      border:0;
+      border-radius:14px;
+      background:#000;
+    }
+
+    img{
+      width:100%;
+      height:auto;
+      max-height:380px;
+      object-fit:cover;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.12);
+      background:var(--card2);
+    }
+
+    .controls{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:8px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:10px 12px;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.08);
+      color:var(--text);
+      text-decoration:none;
+      font-weight:600;
+      transition: transform .08s ease, background .2s ease;
+    }
+
+    .btn:hover{ background:rgba(255,255,255,.14); transform: translateY(-1px); }
+
+    .note{
+      margin-top:12px;
+      padding:12px 12px;
+      border-radius:14px;
+      background:rgba(96,165,250,.12);
+      border:1px solid rgba(96,165,250,.25);
+      color:#cfe3ff;
+      font-size:.95rem;
+      line-height:1.55;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="badge">Multimedia • HTML</div>
+      <h1>Actividad 7: Página con imagen y video</h1>
+      <p>Una sección sencilla usando <strong>imagen</strong>, <strong>enlaces</strong> e <strong>iframe</strong>.</p>
+    </header>
+
+    <section class="grid">
+      <div class="card">
+        <h2>Contenido multimedia</h2>
+        <div class="media">
+          <img
+            src="https://static.wixstatic.com/media/fbfe21_a82a1a73ec8148688d77533a86c366cc~mv2.jpg/v1/fit/w_500,h_500,q_90/file.jpg"
+            width="600"
+            alt="Imagen de ejemplo (cuyo)"
+          />
+
+          <iframe
+            src="https://www.youtube.com/embed/jNQXAC9IVRw"
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+        </div>
+
+        <div class="controls">
+          <a class="btn" href="https://www.youtube.com/@MrBeast" target="_blank" rel="noreferrer">
+            🎥 Canal de MrBeast
+          </a>
+          <a class="btn" href="#detalle">
+            ✨ Ver detalle
+          </a>
+        </div>
+
+        <div class="note" id="detalle">
+          <strong>Nota:</strong> Si el video no carga en archivos locales, normalmente se soluciona usando un servidor local (por ejemplo Live Server) para evitar bloqueos del navegador.
+        </div>
+      </div>
+
+      <aside class="card">
+        <h2>Resumen</h2>
+        <ul style="margin:0; padding-left:18px; color:var(--muted); line-height:1.7;">
+          <li>Se usa una imagen con la etiqueta <code><img></code>.</li>
+          <li>Se incrusta un video con <code><iframe></code>.</li>
+          <li>Incluye un enlace externo con <code><a></code>.</li>
+        </ul>
+        <div class="note" style="margin-top:14px;">
+          <strong>Mejoras hechas:</strong> estructura HTML correcta, texto con mejor ortografía y estilos nuevos para que la página se vea diferente.
+        </div>
+      </aside>
+    </section>
+  </div>
+</body>
+</html>
+
